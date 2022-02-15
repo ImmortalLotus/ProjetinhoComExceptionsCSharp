@@ -7,14 +7,11 @@ using System.Threading.Tasks;
 
 namespace ProjetinhoComExceptionsCSharp.Controller
 {
-    public class FilmeController
+    public class CategoriaController
     {
-
-
-        public Categoria EditaCategoria(Categoria categoria, string nome)
+        public Categoria CriaCategoria(string nome)
         {
-            categoria.Nome = nome;
-            return categoria;
+            return new Categoria(nome);
         }
     }
 }
