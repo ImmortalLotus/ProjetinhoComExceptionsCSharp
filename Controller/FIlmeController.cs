@@ -1,4 +1,5 @@
-﻿using ProjetinhoComExceptionsCSharp.Model;
+﻿using ProjetinhoComExceptionsCSharp.Exceptions;
+using ProjetinhoComExceptionsCSharp.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -37,6 +38,14 @@ namespace ProjetinhoComExceptionsCSharp.Controller
 
         public Categoria EditaCategoria(Categoria categoria, string nome)
         {
+            if (string.IsNullOrEmpty(nome))
+            {
+                throw new ArgumentException("O nome não pode ser vazio");
+            }
+            if (nome.Length<4)
+            {
+                throw new NomeException(" o nome deve ter mais de 4 carateres");
+            }
             categoria.Nome = nome;
             return categoria;
         }

@@ -1,4 +1,5 @@
 ﻿using ProjetinhoComExceptionsCSharp.Controller;
+using ProjetinhoComExceptionsCSharp.Exceptions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,6 +15,14 @@ namespace ProjetinhoComExceptionsCSharp.Model
         public Categoria(string nome)
         {
             TotalDeCategorias++;
+            if (Nome.Length<4)
+            {
+                throw new NomeException(" O nome da categoria não pode ter menos que 4 dígitos");
+            }
+            if (string.IsNullOrEmpty(nome))
+            {
+                throw new ArgumentException("O nome não pode ser vazio cara coé");
+            }
             Nome = nome;
         }
     }
