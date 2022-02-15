@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProjetinhoComExceptionsCSharp.Controller;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,7 +10,7 @@ namespace ProjetinhoComExceptionsCSharp.Model
     public class Categoria
     {
         public static int TotalDeCategorias { get; private set; }
-        public string  Nome { get;}
+        public string Nome { get; set; }        
         public Categoria(string nome)
         {
             TotalDeCategorias++;
