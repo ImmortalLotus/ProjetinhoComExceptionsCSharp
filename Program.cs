@@ -1,4 +1,5 @@
-﻿using ProjetinhoComExceptionsCSharp.Model;
+﻿using ProjetinhoComExceptionsCSharp.Controller;
+using ProjetinhoComExceptionsCSharp.Model;
 using System;
 
 namespace ProjetinhoComExceptionsCSharp
@@ -7,10 +8,11 @@ namespace ProjetinhoComExceptionsCSharp
     {
         static void Main(string[] args)
         {
-            Categoria categoria = new Categoria("ola");
+            CategoriaController categoriaController = new CategoriaController();
+            Categoria categoria = categoriaController.CriaCategoria("Nome");
+            Console.WriteLine("o nome da classe é: " + categoria.Nome);
             Filme filme = new Filme("ola",1,"sim",1,categoria);
             Console.WriteLine("Hello World!");
-
         }
     }
 }
